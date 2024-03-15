@@ -1,0 +1,24 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"first_name": {
+				"__TYPE__": "FieldContent",
+				"value": "mile",
+				"type": "Text"
+			},
+			"last_name": {
+				"__TYPE__": "FieldContent",
+				"value": "brush",
+				"type": "Text"
+			},
+			"tag_line": {
+				"__TYPE__": "FieldContent",
+				"value": "coach",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
