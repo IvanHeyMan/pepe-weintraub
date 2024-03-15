@@ -6,6 +6,11 @@ import { Shapes } from "@/slices/Hero/Shapes";
 import Bounded from "@/components/Bounded";
 import gsap from "gsap";
 
+import { useState, Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { ContactShadows, Environment, OrbitControls } from "@react-three/drei";
+import Flamingo from './Flamingo'
+
 /**
  * Props for `Hero`.
  */
@@ -74,7 +79,20 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       ref={component}
     >
       <div className="grid min-h-[70vh] grid-cols-1 items-center md:grid-cols-2">
-        <Shapes />
+        <Canvas 
+        className="z-0"
+        shadows
+        gl={{ antialias: false }}
+        dpr={[1, 1.5]}
+        camera={{ position: [9, 4, 20], fov: 3, near: 1, far: 40 }}>
+          <ambientLight intensity={0.5}/>
+          <OrbitControls enableZoom={false} enableRotate={true} enablePan={false}/>
+          <Suspense fallback={null}>
+            <Flamingo />
+          </Suspense>
+          <Environment preset="sunset"/>
+          <ContactShadows position={[0, -0.5, 0]} opacity={2} scale={8} blur={1.5} far={10} resolution={256} color={0xf0000}/>
+        </Canvas>
         <div className="col-start-1 md:row-start-1 " data-speed=".2">
           <h1
             className="mb-8 text-[clamp(3rem,20vmin,20rem)] font-extrabold leading-none tracking-tight"
