@@ -100,14 +100,14 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
               slice.primary.first_name + " " + slice.primary.last_name
             }
           >
-            <span className="block text-slate-300 ">
+            <span className="block text-black text-8xl md:text-9xl">
               {renderLetters(slice.primary.first_name, "first")}
             </span>
-            <span className="mt-[.2em] block text-slate-500 text-8xl">
+            <span className="mt-[.2em] block text-black opacity-50 text-7xl md:text-8xl">
               {renderLetters(slice.primary.last_name, "last")}
             </span>
           </h1>
-          <span className="job-title block bg-gradient-to-tr from-yellow-500 via-yellow-200 to-yellow-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
+          <span className="job-title block bg-gradient-to-tr from-pink-500 via-pink-400 to-pink-500 bg-clip-text text-2xl font-bold uppercase tracking-[.2em] text-transparent opacity-0 md:text-4xl">
             {slice.primary.tag_line}
           </span>
         </div>

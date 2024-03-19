@@ -31,7 +31,7 @@ const BlogPostIndex = async ({
         {slice.primary.heading}
       </Heading>
       {isFilled.richText(slice.primary.description) && (
-        <div className="prose prose-xl prose-invert mb-10">
+        <div className="prose prose-xl prose-invert mb-10 text-black">
           <PrismicRichText field={slice.primary.description} />
         </div>
       )}
